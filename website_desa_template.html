@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Resmi Desa - Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#0f766e;
+      --dark:#0b1220;
+      --muted:#6b7280;
+      --accent:#06b6d4;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--dark);line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    header{background:linear-gradient(90deg,var(--green),#087f73);color:white;padding:18px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .nav{display:flex;align-items:center;gap:12px}
+    .brand{font-weight:700;font-size:20px}
+    nav ul{list-style:none;display:flex;gap:12px;margin-left:auto}
+    nav li{padding:6px 10px;border-radius:6px}
+    nav li:hover{background:rgba(255,255,255,0.06)}
+    .hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;padding:36px 0}
+    .hero .left h1{margin:0;font-size:32px}
+    .hero .left p{color:var(--muted);margin-top:8px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:18px}
+    .card{background:white;border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(11,18,32,0.06)}
+
+    .section{margin:28px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    footer{background:#f8fafc;padding:20px;color:var(--muted);font-size:14px}
+
+    /* simple carousel */
+    .carousel{position:relative;border-radius:12px;overflow:hidden}
+    .slides{display:flex;transition:transform .5s ease}
+    .slide{min-width:100%;padding:40px 20px;color:white;background-size:cover;background-position:center}
+    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:10px;display:flex;gap:8px}
+    .dots button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,0.6)}
+    .dots button.active{background:white}
+
+    /* responsive */
+    @media(min-width:800px){
+      .hero{grid-template-columns:1fr 420px}
+      .hero .left h1{font-size:40px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Desa Contoh <span style="font-weight:400;display:block;font-size:12px">Kabupaten Contoh</span></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#profil">Profil Desa</a></li>
+          <li><a href="#berita">Berita</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="left">
+        <h1>Selamat Datang di Website Resmi Desa Contoh</h1>
+        <p>Sumber informasi terbaru tentang pemerintahan, pelayanan publik, potensi desa, dan kegiatan masyarakat.</p>
+
+        <div class="cards" aria-hidden>
+          <div class="card"><strong>APB Desa</strong><div style="font-size:18px;margin-top:8px">Rp0,00</div></div>
+          <div class="card"><strong>Penduduk</strong><div style="font-size:18px;margin-top:8px">0 Jiwa</div></div>
+          <div class="card"><strong>Produk UMKM</strong><div style="font-size:18px;margin-top:8px">0</div></div>
+          <div class="card"><strong>Kunjungan Hari Ini</strong><div style="font-size:18px;margin-top:8px">0</div></div>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="carousel" id="carousel">
+          <div class="slides">
+            <div class="slide" style="background:#065f46"> 
+              <h2>Selamat Datang</h2>
+              <p>Website Resmi Desa Contoh — informasi pemerintahan dan layanan publik.</p>
+            </div>
+            <div class="slide" style="background:#047857">
+              <h2>APB Desa</h2>
+              <p>Transparansi anggaran desa dan laporan realisasi.</p>
+            </div>
+            <div class="slide" style="background:#0ea5a4">
+              <h2>Berita & Pengumuman</h2>
+              <p>Berita terkini dan pengumuman resmi desa.</p>
+            </div>
+          </div>
+          <div class="dots" id="dots"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="profil" class="section">
+      <h3>Profil Desa</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Sambutan Kepala Desa</h4>
+          <p>Isi sambutan singkat kepala desa. Tambahkan foto bila tersedia.</p>
+        </div>
+        <div class="card">
+          <h4>Visi & Misi</h4>
+          <p>Visi misi desa singkat.</p>
+        </div>
+        <div class="card">
+          <h4>Struktur Organisasi</h4>
+          <p>Upload struktur organisasi dalam gambar atau data dinamis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="berita" class="section">
+      <h3>Berita Terbaru</h3>
+      <div class="grid-3">
+        <article class="card">
+          <h4>Judul Berita</h4>
+          <small>12 Okt 2025</small>
+          <p>Ringkasan singkat berita. Tautan ke halaman detail.</p>
+        </article>
+        <article class="card">
+          <h4>Judul Berita</h4>
+          <small>01 Sep 2025</small>
+          <p>Ringkasan singkat berita. Tautan ke halaman detail.</p>
+        </article>
+        <article class="card">
+          <h4>Pengumuman</h4>
+          <small>20 Agu 2025</small>
+          <p>Ringkasan pengumuman penting.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeri" class="section">
+      <h3>Galeri Foto</h3>
+      <div class="grid-3">
+        <div class="card" style="min-height:120px;background-image:url('placeholder1.jpg');background-size:cover"></div>
+        <div class="card" style="min-height:120px;background-image:url('placeholder2.jpg');background-size:cover"></div>
+        <div class="card" style="min-height:120px;background-image:url('placeholder3.jpg');background-size:cover"></div>
+      </div>
+    </section>
+
+    <section id="kontak" class="section">
+      <h3>Kontak</h3>
+      <div class="card">
+        <p>Alamat: Jl. Contoh No.1, Kecamatan Contoh</p>
+        <p>Telepon: (000) 000-000</p>
+        <p>Email: info@desa.contoh</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+        <div>© <strong>Desa Contoh</strong> — Semua hak cipta.</div>
+        <div style="font-size:13px;color:var(--muted)">Dibuat dengan template — sesuaikan konten dan unggah ke hosting Anda.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // simple carousel script
+    (function(){
+      const slidesEl = document.querySelector('.slides');
+      const slides = document.querySelectorAll('.slide');
+      const dotsEl = document.getElementById('dots');
+      let idx = 0;
+      function renderDots(){
+        dotsEl.innerHTML = '';
+        slides.forEach((s,i)=>{
+          const btn = document.createElement('button');
+          btn.addEventListener('click',()=>{go(i)});
+          if(i===0) btn.classList.add('active');
+          dotsEl.appendChild(btn);
+        })
+      }
+      function go(i){ idx=i; slidesEl.style.transform = `translateX(-${i*100}%)`; updateDots(); }
+      function updateDots(){ Array.from(dotsEl.children).forEach((b,j)=>b.classList.toggle('active', j===idx)); }
+      function next(){ idx = (idx+1)%slides.length; go(idx); }
+      renderDots(); setInterval(next,5000);
+    })();
+  </script>
+</body>
+</html>
